@@ -16,6 +16,12 @@ export default function Home() {
       >
         Global
       </Link>
+      <Link
+        href="/userForm"
+        className="btn-rose"
+      >
+        UserForm
+      </Link>
     </div>
   )
 }
