@@ -11,16 +11,10 @@ export default function Home() {
         Counter
       </Link>
       <Link
-        href="/global"
+        href="/form"
         className="btn-rose"
       >
-        Global
-      </Link>
-      <Link
-        href="/userForm"
-        className="btn-rose"
-      >
-        UserForm
+        Form
       </Link>
     </div>
   )

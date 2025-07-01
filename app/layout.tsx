@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "@/public/styles/globals.scss";
-import { StoreProvider } from "@/libs/Provider";
 
 const vazirFont = localFont({
   src: [
@@ -103,9 +102,7 @@ export default function RootLayout({
       <body
         className={`${vazirFont.className} ${iranYekan.className} overflow-x-hidden`}
       >
-        <StoreProvider>
-          {children}
-        </StoreProvider>
+        {children}
       </body>
     </html>
   );
