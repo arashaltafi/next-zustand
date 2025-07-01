@@ -30,13 +30,23 @@
     @apply m-0 p-0 box-border;
     font-family: 'iranyekan', 'vazir', Cambria, Cochin, Georgia, Times, serif, sans-serif, monospace !important;
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer components {
   .title {
     @apply text-3xl;
   }
-  
+
   .sub-title {
     @apply text-2xl;
   }
@@ -265,7 +275,7 @@
     0% {
       transform: rotate(0deg);
     }
-  
+
     100% {
       transform: rotate(360deg);
     }
