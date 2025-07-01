@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { logger } from './logger';
 
 interface FormData {
   name: string;
@@ -7,7 +8,7 @@ interface FormData {
   email: string;
 }
 
-interface State {
+export interface State {
   count: number;
   form: FormData;
   increment: () => void;
@@ -18,8 +19,8 @@ interface State {
 }
 
 export const useStore = create<State>()(
-  persist(
-    (set) => ({
+  persist<State>(
+    logger((set, get) => ({
       count: 0,
       form: { name: '', age: '', email: '' },
       increment: () => set((state) => ({ count: state.count + 1 })),
@@ -27,7 +28,7 @@ export const useStore = create<State>()(
       resetCounter: () => set({ count: 0 }),
       setForm: (data) => set((state) => ({ form: { ...state.form, ...data } })),
       resetForm: () => set({ form: { name: '', age: '', email: '' } }),
-    }),
+    })),
     { name: 'app-storage' }
   )
 );
